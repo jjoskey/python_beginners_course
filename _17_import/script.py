@@ -22,4 +22,5 @@ from math_operations import add, subtract  # possible, but not recommended
 print(add(4, 5))
 print(subtract(4, 5))
 
+from .._15_function_advanced._2_return_mutiple_values import modify_dict  # possible, but not recommended
 

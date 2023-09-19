@@ -1,10 +1,10 @@
-numbers1 = [1, 2, 3, 4, 5]
-average1 = sum(numbers1) / len(numbers1)
-print(f'The average of numbers1 is {average1}')
+numbers_1 = [1, 2, 3, 4, 5]
+average_1 = sum(numbers_1) / len(numbers_1)
+print(f'The average of numbers1 is {average_1}')
 
-numbers2 = [6, 7, 8, 9, 10]
-average2 = sum(numbers2) / len(numbers2)
-print(f'The average of numbers2 is {average2}')
+numbers_2 = [6, 7, 8, 9, 10]
+average_2 = sum(numbers_2) / len(numbers_2)
+print(f'The average of numbers2 is {average_2}')
 
 
 def find_average(numbers):
@@ -12,8 +12,9 @@ def find_average(numbers):
     return average
 
 
-print(find_average(numbers1))  # Outputs: 3.0
-print(find_average(numbers2))  # Outputs: 8.0
+average_1 = find_average(numbers_1)
+print(average_1)  # Outputs: 3.0
+print(find_average(numbers_2))  # Outputs: 8.0
 
 
 def count_vowels(string):
@@ -36,6 +37,7 @@ def nothing():
 def nothing():
     pass
 
+
 my_variable = nothing()
 print(my_variable)  # Outputs: None
 print(nothing())  # Outputs: None
@@ -44,12 +46,14 @@ print(nothing())  # Outputs: None
 def format_date(day, month):
     return f"The date is {day} of {month}."
 
+
 print(format_date(15, "October"))  # Outputs: The date is 15 of October.
 print(format_date("January", 1))  # Outputs: "The date is January of 1."
 
 
 def format_date(day: int, month: str) -> str:
     return f"The date is {day} of {month}."
+
 
 print(format_date(13, "July"))  # Outputs: "The date is 13 of July."
 print(format_date(day=13, month="July"))  # Outputs: "The date is 13 of July."
@@ -61,4 +65,5 @@ def custom_greeting(first_name: str, last_name: str, greeting: str = "Hello") ->
 
 
 print(custom_greeting(first_name="John", last_name="Doe"))  # Outputs: "Hello, John Doe!"
-print(custom_greeting(first_name="John", last_name="Doe", greeting="Good morning"))  # Outputs: "Good morning, John Doe!"
+print(
+    custom_greeting(first_name="John", last_name="Doe", greeting="Good morning"))  # Outputs: "Good morning, John Doe!"

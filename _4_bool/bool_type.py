@@ -1,7 +1,6 @@
 is_student = True
 is_graduated = False
 
-
 x = 10
 y = 10
 print(x == y)  # Outputs: True
@@ -10,14 +9,12 @@ print(is_equal)  # Outputs: True
 print(x != y)  # Outputs: False
 print(x >= y)  # Outputs: True
 
-
 x = 10
 y = 20
 print(x > y)  # Outputs: False
 print(x < y)  # Outputs: True
 print(x <= y)  # Outputs: True
 print(x != y)  # Outputs: True
-
 
 x = 1
 print(x < 5 and x > -2)  # Outputs: True
@@ -38,5 +35,3 @@ print(int(False))  # Outputs: 0
 
 print(bool("Hello"))  # Outputs: True
 print(bool(""))  # Outputs: False
-
-

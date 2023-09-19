@@ -1,39 +1,35 @@
-fruits = ("apple", "banana", "cherry")
-print(fruits)
+user_roles = ("admin", "editor", "viewer")
+print(user_roles)
 
-fruits = ("apple", "banana", "cherry")
-print(len(fruits))  # Outputs: 3
+user_roles = ("admin", "editor", "viewer")
+print(len(user_roles))  # Outputs: 3
 
-for fruit in fruits:
-    print(fruit)
+for role in user_roles:
+    print(role)
 
-print("apple" in fruits)  # Outputs: True
+print("admin" in user_roles)  # Outputs: True
 
-print(fruits[1])  # Outputs: "banana"
-# fruits[1] = "watermelon"  # TypeError: 'tuple' object does not support item assignment
+print(user_roles[1])  # Outputs: "admin"
+# user_roles[1] = "author"  # TypeError: 'tuple' object does not support item assignment
 
+not_tuple = ("apple")
+print(type(not_tuple))  # Outputs: <class 'str'>
 
-fruits = ("apple",)
-print(type(fruits))  # Outputs: <class 'tuple'>
+user_roles = ("admin",)
+print(type(user_roles))  # Outputs: <class 'tuple'>
 
-my_not_tuple = ("apple")
-print(type(my_not_tuple))  # Outputs: <class 'str'>
+user_roles = ("admin", "editor", "viewer")
+role_1, role_2, role_3 = user_roles
+print(role_1)  # Outputs: "admin"
+print(role_2)  # Outputs: "editor"
+print(role_3)  # Outputs: "viewer"
 
+user_roles = ["admin", "editor", "viewer"]  # with lists it works too
+role_1, role_2, role_3 = user_roles
+print(role_1)  # Outputs: "admin"
+print(role_2)  # Outputs: "editor"
+print(role_3)  # Outputs: "viewer"
 
-fruits = ("apple", "banana", "cherry")
-fruit1, fruit2, fruit3 = fruits
-print(fruit1)  # Outputs: "apple"
-print(fruit2)  # Outputs: "banana"
-print(fruit3)  # Outputs: "cherry"
-
-
-fruits = ["apple", "banana", "cherry"]  # with list it works too
-fruit1, fruit2, fruit3 = fruits
-print(fruit1)  # Outputs: "apple"
-print(fruit2)  # Outputs: "banana"
-print(fruit3)  # Outputs: "cherry"
-
-
-fruit1, fruit2, _ = fruits
-print(fruit1)  # Outputs: "apple"
-print(fruit2)  # Outputs: "banana"
+role_1, role_2, _ = user_roles
+print(role_1)  # Outputs: "admin"
+print(role_2)  # Outputs: "editor"

@@ -17,7 +17,6 @@ print(labelled_numbers)  # Outputs: ['even', 'odd', 'even', 'odd', 'even', 'odd'
 square_dict = {x: x ** 2 for x in range(10)}
 print(square_dict)  # Outputs: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
 
-
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -29,7 +28,7 @@ for i in range(len(matrix)):
     for row in matrix:
         transpose_row.append(row[i])
     transpose.append(transpose_row)
-print(transpose)
+print(transpose)  # Outputs: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
 transpose = [[row[i] for row in matrix] for i in range(len(matrix))]
 print(transpose)  # Outputs: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]

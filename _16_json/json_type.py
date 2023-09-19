@@ -1,22 +1,21 @@
 import json
 
-person = {
-    "name": "John",
-    "age": 30,
-    "city": "New York",
-    "is_married": True,
-    "children": ["Ann", "Billy"],
+book = {
+    'title': '1984',
+    'author': 'George Orwell',
+    'isbn': '978-0451524935',
+    'uuid': 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
 }
 
 # convert into JSON:
-json_string = json.dumps(person)
+json_string = json.dumps(book)
 print(type(json_string))
-print(json_string)  # Outputs: {"name": "John", "age": 30, "city": "New York", "is_married": true, "children": ["Ann", "Billy"]}
+print(json_string)  # Outputs: {"title": "1984", "author": "George Orwell", "isbn": "978-0451524935", "uuid": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"}
 
+json_string = '{"title": "1984", "author": "George Orwell", "isbn": "978-0451524935", "uuid": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"}'
 
-json_string = '{"name": "John", "age": 30, "city": "New York", "is_married": true, "children": ["Ann", "Billy"]}'
-
-person = json.loads(json_string)
-print(type(person))
-print(person)  # Outputs: {'name': 'John', 'age': 30, 'city': 'New York', 'is_married': True, 'children': ['Ann', 'Billy']}
-print(person["name"])  # Outputs: John
+book = json.loads(json_string)
+print(type(book))
+print(
+    book)  # Outputs: {'title': '1984', 'author': 'George Orwell', 'isbn': '978-0451524935', 'uuid': 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'}
+print(book["title"])  # Outputs: 1984

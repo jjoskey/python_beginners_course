@@ -4,7 +4,7 @@ def my_function():
 
 
 my_function()
-print(local_var)  # This will raise an error because local_var is not defined outside the function
+# print(local_var)  # This will raise an error because local_var is not defined outside the function
 
 for i in range(10):
     print(i)
@@ -41,9 +41,7 @@ def my_function():
 
 
 my_function()
-print(global_var)  # This will print: "I've been changed inside a function"
-
-
+print(global_var)  # This will print: "I've been changed inside a function", but it's bad practice
 
 DEFAULT_LEVEL_EXPERIENCE = 200
 
