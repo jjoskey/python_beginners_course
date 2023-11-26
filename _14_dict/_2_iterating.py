@@ -3,12 +3,14 @@ person = {
     "age": 30,
     "city": "New York"
 }
-print(person.items())
+
 for item in person.items():
     print(item)
+    print(type(item))
 
 for key, value in person.items():
-    print(f"{key}: {value}")
+    print(key)
+    print(value)
 
 for key in person.keys():
     print(key)

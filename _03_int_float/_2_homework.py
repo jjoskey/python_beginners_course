@@ -8,7 +8,7 @@
 
 #  решение
 
-flat_number = 10
+flat_number = 9
 entrance_number = 1 + (flat_number - 1) // 20
 floor_number = 1 + (flat_number - 1) % 20 // 4
 

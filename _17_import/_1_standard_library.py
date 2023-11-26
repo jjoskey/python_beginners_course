@@ -1,17 +1,17 @@
-print(globals().keys())
+my_int = 1
 
-import json
+print(globals().keys())  # find my_int
+
 import random
 
-print(dir(json))  # find loads and dumps
-print(dir(random))  # find choice
+my_list = [1, 2, 3]
+print(random.choice(my_list))
+print(globals().keys())
 
-from random import choice
-
-print(choice([1, 2, 3]))
+print(dir(random))
 
 import builtins
 
 print(dir(builtins))  # find print, range, dict, list, etc.
 
-print(globals().keys())
+

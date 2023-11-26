@@ -1,25 +1,24 @@
-def get_sum(*args):
-    # print(type(args))
+def add_all(*args):
     summary = 0
     for num in args:
         summary += num
     return summary
 
 
-print(get_sum(1, 2, 3))  # Outputs: 6
-print(get_sum(1, 2, 3, 4, 5))  # Outputs: 15
+print(add_all(1, 2, 3))  # Outputs: 6
+print(add_all(1, 2, 3, 4, 5))  # Outputs: 15
 
 values = [1, 2, 3, 4, 5]
 other_values = [6, 7, 8, 9, 10]
 
-print(get_sum(*values))  # Outputs: 15
-print(get_sum(*values, *other_values))  # Outputs: 55
+print(add_all(*values))  # Outputs: 15
+print(add_all(*values, *other_values))  # Outputs: 55
 
 
 def introduce(**kwargs):
-    # print(type(kwargs))
     for key, value in kwargs.items():
-        print(f"{key} is {value}")
+        print(key)
+        print(value)
 
 
 introduce(name="John", age=30, city="New York")
@@ -33,7 +32,7 @@ person = {
 introduce(**person)
 
 
-def func_with_all_arguments(x: int, y: int, *args, value: int = 0, **kwargs):
+def func_with_all_arguments(x: int, y: int, *args, value: int = 6, **kwargs):
     print(x, y)
     print(args)
     print(value)
@@ -43,5 +42,5 @@ def func_with_all_arguments(x: int, y: int, *args, value: int = 0, **kwargs):
 func_with_all_arguments(
     *[3, 4, 5, 6, 7, 8, 9],
     x=1, y=2,
-    **{"name": "John", "age": 30, "city": "New York"}
+    **person
 )

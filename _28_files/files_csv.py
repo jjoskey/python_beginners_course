@@ -21,7 +21,7 @@ persons = [
     {'name': 'Jack', 'age': 26, 'occupation': 'Artist'},
     {'name': 'Emma', 'age': 32, 'occupation': 'Programmer'}
 ]
-fields = ['name', 'age', 'occupation']
+fields = ['name', 'age', 'occup ation']
 csv_dict_writer = csv.DictWriter(file, fieldnames=fields)
 csv_dict_writer.writerows(persons)
 file.close()

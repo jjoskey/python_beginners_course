@@ -1,12 +1,11 @@
 from _17_import.math_operations import add, subtract
 
-print(add(4, 5))
-print(subtract(4, 5))
+print(add(1, 2))
+print(subtract(2, 1))
 
 from _17_import import math_operations
 
-print(math_operations.add(4, 5))
-print(math_operations.subtract(4, 5))
+print(math_operations.add(1, 2))
 
 
 from _17_import.math_operations import *  # don't do this

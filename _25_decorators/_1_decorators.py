@@ -11,7 +11,6 @@ def say_hello():
     print("Hello!")
 
 
-# print(my_decorator((say_hello)))
 my_decorator(say_hello)()
 
 
@@ -30,13 +29,6 @@ def my_decorator(func):
         print("Something is happening after the function is called.")
 
     return wrapper
-
-
-def say_hello(*, name: str):
-    print(f"Hello, {name}!")
-
-
-my_decorator(say_hello)(name="Sasha")
 
 
 @my_decorator

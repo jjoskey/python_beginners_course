@@ -1,5 +1,1 @@
-{
-    "name": "Mike",
-    "age": 30,
-    "city": "New York"
-}
+{"ordinal_workout_number": 5, "has_name": 0, "name": "", "personal_best_count": 0, "personal_best": {"description": "", "difference": "", "has_difference": 0}, "has_heart_rate": 1, "heart_rate": {"rates": [150, 151, 140, 156, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "rates_len": 4, "min_heart_rate": 140, "max_heart_rate": 156, "avg_heart_rate": 149}, "workout_muscle_load": {"biceps": 24, "triceps": 26, "shoulders": 28, "chest": 30, "back": 32, "core": 252, "glutes": 297, "hamstrings": 261, "quadriceps": 100, "lower_back": 2}, "new_exercises_count": 2, "new_exercises_names": ["High Knee Run", "Squats", ""], "date": "September 29, 2023", "kcal": 480, "workout_type": "lower body", "duration": 30, "lifted_weight": 12, "total_sets": 37, "location": 1}

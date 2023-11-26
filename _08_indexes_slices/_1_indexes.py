@@ -1,21 +1,13 @@
-my_list = ['apple', 'banana', 'cherry', 'watermelon', 'elderberry']
+fruits = ['apple', 'banana', 'cherry', 'watermelon']
+print(fruits[0])  # Outputs: 'apple'
+print(fruits[-4])  # Outputs: 'apple'
+print(fruits[3])  # Outputs: 'watermelon'
+# print(my_list[4])  # IndexError: list index out of range
+# print(my_list[-5]) # IndexError: list index out of range
+fruits[0] = 'pineapple'
+print(fruits)  # Outputs: ['pineapple', 'banana', 'cherry', 'watermelon']
 
-print(my_list[0])  # Outputs: 'apple'
-print(my_list[3])  # Outputs: 'date'
-print(my_list[-1])  # Outputs: 'elderberry'
-print(my_list[-2])  # Outputs: 'watermelon'
-# print(my_list[5])  # IndexError: list index out of range
-# print(my_list[-6]) # IndexError: list index out of range
 
-my_string = "Hello, world!"
-print(my_string[0])  # Outputs: 'H'
-print(my_string[3])  # Outputs: 'l'
-print(my_string[-1])  # Outputs: '!'
-
-my_list = ['apple', 'banana', 'cherry']
-my_list[0] = 'pineapple'
-print(my_list)  # Outputs: ['pineapple', 'banana', 'cherry']
-
-my_list = ['apple', 'banana', 'cherry']
-my_list[0], my_list[2] = my_list[2], my_list[0]
-print(my_list)  # Outputs: ['cherry', 'banana', 'apple']
+fruits = ['apple', 'banana', 'cherry', 'watermelon']
+fruits[0], fruits[3] = fruits[3], fruits[0]
+print(fruits)  # Outputs: ['watermelon', 'banana', 'cherry', 'apple']

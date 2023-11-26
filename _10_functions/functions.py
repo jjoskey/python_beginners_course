@@ -1,10 +1,10 @@
 numbers_1 = [1, 2, 3, 4, 5]
 average_1 = sum(numbers_1) / len(numbers_1)
-print(f'The average of numbers1 is {average_1}')
+print(average_1)  # Outputs: 3.0
 
 numbers_2 = [6, 7, 8, 9, 10]
 average_2 = sum(numbers_2) / len(numbers_2)
-print(f'The average of numbers2 is {average_2}')
+print(average_2)  # Outputs: 8.0
 
 
 def find_average(numbers):
@@ -13,12 +13,12 @@ def find_average(numbers):
 
 
 average_1 = find_average(numbers_1)
-print(average_1)  # Outputs: 3.0
-print(find_average(numbers_2))  # Outputs: 8.0
+average_2 = find_average(numbers_2)
+print(average_1, average_2)  # 3.0 8.0
 
 
 def count_vowels(string):
-    vowels = 'aeiouAEIOU'
+    vowels = 'aeiouyAEIOUY'
     count = 0
     for char in string:
         if char in vowels:
@@ -27,7 +27,7 @@ def count_vowels(string):
 
 
 print(count_vowels("Hello, World!"))  # Outputs: 3
-print(count_vowels("Python is a very powerful language."))  # Outputs: 10
+print(count_vowels("Python is a very powerful language."))  # OutpRuts: 13
 
 
 def nothing():
@@ -51,19 +51,16 @@ print(format_date(15, "October"))  # Outputs: The date is 15 of October.
 print(format_date("January", 1))  # Outputs: "The date is January of 1."
 
 
-def format_date(day: int, month: str) -> str:
+def format_date(*, day: int, month: str) -> str:
     return f"The date is {day} of {month}."
 
 
-print(format_date(13, "July"))  # Outputs: "The date is 13 of July."
-print(format_date(day=13, month="July"))  # Outputs: "The date is 13 of July."
-print(format_date(month="July", day=13))  # Outputs: "The date is 13 of July."
+print(format_date(day=15, month="October"))  # Outputs: The date is 15 of October.
 
 
-def custom_greeting(first_name: str, last_name: str, greeting: str = "Hello") -> str:
-    return f"{greeting}, {first_name} {last_name}!"
+def custom_greeting(*, name: str, greeting: str = "Hello") -> str:
+    return f"{greeting}, {name}"
 
 
-print(custom_greeting(first_name="John", last_name="Doe"))  # Outputs: "Hello, John Doe!"
-print(
-    custom_greeting(first_name="John", last_name="Doe", greeting="Good morning"))  # Outputs: "Good morning, John Doe!"
+print(custom_greeting(name="John"))  # Outputs: Hello, John
+print(custom_greeting(name="John", greeting="Good morning"))  # Outputs: Good morning, John

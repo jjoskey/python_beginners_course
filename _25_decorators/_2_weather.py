@@ -1,8 +1,8 @@
-import time
 import requests
 from requests.exceptions import RequestException
+import time
 
-API_KEY = ""
+API_KEY = "BQGPUW9HYTACK9GUGMCWBNFE5"  # register on https://www.visualcrossing.com/ to get API_KEY
 
 
 def retry(func):
@@ -12,20 +12,24 @@ def retry(func):
             try:
                 return func(*args, **kwargs)
             except RequestException:
-                print(f'Failed to get data. Retrying in {seconds} seconds...')
+                print(f"Failed to get data. Retrying in {seconds} seconds")
                 time.sleep(seconds)
         return func(*args, **kwargs)
+
     return wrapper_retry
 
 
 @retry
 def get_weather_by_hours_for_day_from_api(*, date: str, city: str) -> list[dict]:
-    response = requests.get(
-        f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}/{date}/{date}?unitGroup=us&key={API_KEY}")
-    data = response.json()
-    weather_by_days = data["days"]
+    url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}/{date}/{date}?unitGroup=us&key={API_KEY}"
+    response = requests.get(url)
+    weather_by_days = response.json()["days"]
+    weather_by_hours = weather_by_days[0]["hours"]
+    return weather_by_hours
 
-    return weather_by_days[0]["hours"]
+
+def fahrenheit_to_celsius(*, fahrenheit_temperature: float) -> int:
+    return round((fahrenheit_temperature - 32) * 5 / 9)
 
 
 def get_dangerous_hours(*, weather_by_hour: list[dict]) -> list[dict]:
@@ -33,18 +37,15 @@ def get_dangerous_hours(*, weather_by_hour: list[dict]) -> list[dict]:
     for weather in weather_by_hour:
         uvindex = weather["uvindex"]
         time = weather["datetime"]
-        celsious_temperature = fahrenheit_to_celsius(weather["temp"])
+        celsius_temperature = fahrenheit_to_celsius(fahrenheit_temperature=weather["temp"])
         if uvindex >= 3:
-            dangerous_hours.append({"time": time, "uvindex": uvindex, "temperature": celsious_temperature})
+            dangerous_hours.append({"time": time, "uvindex": uvindex, "temperature": celsius_temperature})
+
     return dangerous_hours
-
-
-def fahrenheit_to_celsius(fahrenheit_temperature: float) -> int:
-    return round((fahrenheit_temperature - 32) * 5 / 9)
 
 
 date = "2023-08-04"
 city = "London,UK"
-day_weather = get_weather_by_hours_for_day_from_api(date=date, city=city)
-dangerous_hours = get_dangerous_hours(weather_by_hour=day_weather)
+weather_by_hour = get_weather_by_hours_for_day_from_api(date=date, city=city)
+dangerous_hours = get_dangerous_hours(weather_by_hour=weather_by_hour)
 print(dangerous_hours)

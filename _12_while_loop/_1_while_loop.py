@@ -1,13 +1,15 @@
 counter = 1
-
 while counter <= 5:
-    print(f'Counter is: {counter}')
+    print(f'Counter is: {counter}')  # Outputs: 1, 2, 3, 4, 5
     counter += 1
 
-my_list = [0, 1, 2, 3, 4, 5]
+
+my_list = [0, 1, 2]
 while my_list:
     element = my_list.pop()
-    print(element)
+    print(f"element: {element}")  # Outputs: 2, 1, 0
+print(my_list)  # Outputs: []
+
 
 while True:
     print("Infinite loop!")

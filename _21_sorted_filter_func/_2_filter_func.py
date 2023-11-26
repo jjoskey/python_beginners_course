@@ -3,8 +3,8 @@ def is_even(n):
 
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-filtered_numbers = filter(is_even, numbers)
-print(list(filtered_numbers))  # Output will be [2, 4, 6, 8]
+filtered_numbers = list(filter(is_even, numbers))
+print(filtered_numbers)  # Output will be [2, 4, 6, 8]
 
 
 def is_adult(person):
@@ -17,6 +17,6 @@ people = [
     {"name": "Charlie", "age": 19},
     {"name": "David", "age": 40}
 ]
-filtered_people = filter(is_adult, people)
-print(list(filtered_people))
+filtered_people = list(filter(is_adult, people))
+print(filtered_people)
 # Output will be [{'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 19}, {'name': 'David', 'age': 40}]

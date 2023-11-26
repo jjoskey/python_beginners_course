@@ -1,11 +1,17 @@
+# bad
 lst = [2, 3, 4]
 for num in lst:
     lst.append(num ** 2)
     print(num)
-    #  цикл будет бесконечным, его нужно остановить
-    if num > 10:
-        break
 
+# ok
+lst = [2, 3, 4]
+another_list = [i ** 2 for i in lst]
+lst.extend(another_list)
+print(lst)  # [2, 3, 4, 4, 9, 16]
+
+
+# bad
 numbers = [1, 3, 5, 4, 8, 6]
 for num in numbers:
     if num % 2 == 0:
@@ -13,6 +19,7 @@ for num in numbers:
 
 print(numbers)  # output [1, 3, 5, 8]
 
+# ok
 numbers = [1, 3, 5, 4, 8, 6]
 odd_numbers = []
 for num in numbers:
