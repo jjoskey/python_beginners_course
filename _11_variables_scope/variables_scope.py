@@ -60,7 +60,7 @@ print(global_var)  # Outputs: "I've defined inside the scope of my_function"
 DEFAULT_LEVEL_EXPERIENCE = 200
 
 
-def is_leveled_up(current_experience: int, gained_experience: int):
+def is_leveled_up(*, current_experience: int, gained_experience: int):
     total_experience = current_experience + gained_experience
     level_up = False
     if total_experience >= DEFAULT_LEVEL_EXPERIENCE:

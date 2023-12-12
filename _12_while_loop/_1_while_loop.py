@@ -11,8 +11,8 @@ while my_list:
 print(my_list)  # Outputs: []
 
 
-while True:
-    print("Infinite loop!")
+# while True:
+#     print("Infinite loop!")
 
 while True:
     answer = input("Enter a number: ")

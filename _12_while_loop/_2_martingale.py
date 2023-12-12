@@ -40,7 +40,7 @@ print(play_martingale(starting_funds=100, min_bet=1, max_bet=100))
 
 def simulate_martingale_for_n_games(starting_funds: int, min_bet: int, max_bet: int, n_games: int) -> float:
     total_steps_to_loose = 0
-    for _ in range(n_games):
+    for i in range(n_games):
         step_to_loose = play_martingale(starting_funds, min_bet, max_bet)
         total_steps_to_loose += step_to_loose
     return total_steps_to_loose / n_games
